@@ -2,7 +2,7 @@
 
 参考链接
 http://www.cnblogs.com/jingangel/archive/2012/07/23/2604741.html
-
+```
 var tabv = document.getElementById("f_tabv");
 var tabva = tabv.getElementsByTagName("a");
 var tabcv = document.getElementById("f_tab_cv");
@@ -21,3 +21,4 @@ for(var i=0; i<tabva.length; i++){
         return false;
     }
 }
+```
