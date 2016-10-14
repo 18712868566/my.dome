@@ -1,28 +1,32 @@
 # my.dome
 
-// git 常用操作
-第一次提交
+git
+======
 
-$ git remote add origin git@github.com:18712868566/<neme>.git
+>**git 常用操作**
 
-提交一次后再次提交 只需要
+>-第一次提交
 
-$ git push origin master
+>-$ git remote add origin git@github.com:18712868566/<neme>.git
+
+>-提交一次后再次提交 只需要
+
+>-$ git push origin master
 
 //
-Git鼓励大量使用分支：
+>-Git鼓励大量使用分支：
 
-查看分支：git branch
+>-查看分支：git branch
 
-创建分支：git branch <name>
+>-创建分支：git branch <name>
 
-切换分支：git checkout <name>
+>-切换分支：git checkout <name>
 
-创建+切换分支：git checkout -b <name>
+>-创建+切换分支：git checkout -b <name>
 
-合并某分支到当前分支：git merge <name>
+>-合并某分支到当前分支：git merge <name>
 
-删除分支：git branch -d <name>
+>-删除分支：git branch -d <name>
 
 
 
