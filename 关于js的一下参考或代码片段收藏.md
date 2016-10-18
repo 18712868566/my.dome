@@ -122,12 +122,12 @@ for(var i=0; i<tabva.length; i++){
 ````
 !(function(win, doc){
     function setFontSize() {
-        // 获取window 宽度
-        // zepto实现 $(window).width()就是这么干的
+        > // 获取window 宽度
+        > // zepto实现 $(window).width()就是这么干的
         var winWidth =  window.innerWidth;
-        // doc.documentElement.style.fontSize = (winWidth / 640) * 100 + "px" ;
-        // 2016-01-13 订正
-        // 640宽度以上进行限制 需要css进行配合
+        > // doc.documentElement.style.fontSize = (winWidth / 640) * 100 + "px" ;
+        > // 2016-01-13 订正
+        > // 640宽度以上进行限制 需要css进行配合
         var size = (winWidth / 640) * 100;
         doc.documentElement.style.fontSize = (size < 100 ? size : 100) + "px" ;
     }
@@ -143,7 +143,7 @@ for(var i=0; i<tabva.length; i++){
             timer = setTimeout(setFontSize, 300);
         }
     }, false);
-    // 初始化
+    > // 初始化
     setFontSize();
 }(window, document));
 ````
@@ -154,8 +154,8 @@ for(var i=0; i<tabva.length; i++){
 >- 方法一：
 ```
 var u = navigator.userAgent;
-var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;  //android终端
-var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);             //ios终端
+var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;  > //android终端
+var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);             > //ios终端
 if(isAndroid) {
   alert('这是Android');
 }
@@ -168,10 +168,10 @@ if(isiOS) {
 
 ````
 if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
-  //alert(navigator.userAgent);
+  > //alert(navigator.userAgent);
   alert('这是IOS');
 } else if(/(Android)/i.test(navigator.userAgent)) {
-  //alert(navigator.userAgent);
+  > //alert(navigator.userAgent);
   alert('这是Android');
 } else {
   alert('这是PC');
