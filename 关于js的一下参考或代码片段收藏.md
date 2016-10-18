@@ -27,7 +27,7 @@ for(var i=0; i<tabva.length; i++){
 ----------
 
 > **jQuery** 图片预加载， 插件 lazyload
-> **http://www.ijquery.cn/?p=253**
+> **参考链接** http://www.ijquery.cn/?p=253
 
 ```
 (function lodinImg(){
