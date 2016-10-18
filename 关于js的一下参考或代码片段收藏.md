@@ -186,3 +186,16 @@ if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
   alert('这是PC');
 };
 ````
+>- 微信浏览器or非微信浏览器。
+
+```
+function is_weixn() {
+  var ua = navigator.userAgent.toLowerCase();
+  if(ua.match(/MicroMessenger/i) == 'micromessenger') {
+    alert('在微信里打开');
+  } else {
+    alert('不在微信里打开');
+  }
+}
+is_weixn();
+```
