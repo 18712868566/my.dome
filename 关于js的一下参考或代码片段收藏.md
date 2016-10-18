@@ -126,7 +126,6 @@ for(var i=0; i<tabva.length; i++){
         // zepto实现 $(window).width()就是这么干的
         var winWidth =  window.innerWidth;
         // doc.documentElement.style.fontSize = (winWidth / 640) * 100 + "px" ;
-        
         // 2016-01-13 订正
         // 640宽度以上进行限制 需要css进行配合
         var size = (winWidth / 640) * 100;
