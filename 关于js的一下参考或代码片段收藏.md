@@ -1,5 +1,5 @@
-#用js改变embed标签的src值
-
+用js改变embed标签的src值
+------------------------
 参考链接
 http://www.cnblogs.com/jingangel/archive/2012/07/23/2604741.html
 ```
@@ -21,4 +21,31 @@ for(var i=0; i<tabva.length; i++){
         return false;
     }
 }
+```
+
+图片预加载
+----------
+
+> **jQuery** 图片预加载， 插件 lazyload
+> **http://www.ijquery.cn/?p=253**
+
+```
+(function lodinImg(){
+ var images = new Array()
+    function preload() {
+            for (i = 0; i < preload.arguments.length; i++) 
+            {
+                images[i] = new Image()
+          images[i].src = preload.arguments[i]                               
+             }
+    }
+    preload(
+           /*
+            "images/gift1.png",
+            "images/gift2.png",
+            "images/gift3.png",
+            "images/gift4.png"
+            */
+    )
+})();
 ```
