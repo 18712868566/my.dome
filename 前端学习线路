@@ -1,0 +1,66 @@
+CSS、CSS3
+HTML、HTML5
+JavaScript、ES6
+HTTP协议
+性能优化
+一门后端语言
+7.更好的方式写代码
+8.线下开发和代码发布
+
+
+学会 Markdown，平时多写文档
+坚持写博客，收益绝对超出你想象，但要写在大众的地方，不要自己搞个网站，否则没人关注，渐渐就没了兴趣
+了解一下GitHub，让你的代码不在停留在本地。
+Git语法 
+
+CSS
+CSS有几个核心知识
+position和z-index
+display
+float
+margin
+MDN上有很多基础知识的文章，很全面，例子也很详尽 CSS入门教程另外CSS布局技巧也需要掌握
+CSS3常用的
+变形
+动画
+圆角、阴影
+box-sizing
+flex
+HTML
+推荐 w3school 和 MDN
+HTML5看场景，如果是移动端，应该开始全面掌握了，
+PC的话也有几个常用的，能做到兼容或者退化的
+localstorage
+history
+placeholder
+postMessage
+requestAnimationFrame
+Canvas & SVG
+全面了解的话 MDN依旧是个好去处
+JavaScript
+推荐 JavaScript高级程序设计，
+JavaScript权威指南做工具书更合适一些
+
+jQuery
+关于ES6看看阮一峰的 ECMAScript 6 入门，
+阮老师的博客里入门教程类的干货真心不少，
+
+HTTP
+ 图解HTTP
+HTTP权威指南也很不错，
+
+进阶
+
+预处理
+Sass、Less
+
+模块化
+CommonJS、AMD、CMD
+
+工程化
+gulp、webpack、NodeJS
+MVVM 等框架
+React、AngularJS、Vue.js
+
+
+终极目标都是解决问题，千万不要沉迷于框架或者语言的无谓之争上
