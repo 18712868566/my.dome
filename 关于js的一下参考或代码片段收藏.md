@@ -1,3 +1,6 @@
+javascript notepad
+================
+
 #常用函数，整理，
 
 
@@ -31,29 +34,55 @@ for(var i=0; i<tabva.length; i++){
 ---------------
 >**JQuery**方法，
 >- 在战舰猎手官网上用应用
+>- 兼容ie
 
 ```
-function setEmbed(){
-  var tabv = document.getElementById("f_tabv");
-  var tabva = tabv.getElementsByTagName("a");
-  var tabcv = document.getElementById("f_tab_cv");
-  tabcv.innerHTML = '<EMBED src="abc.wmv" autostart="true" width="545" height="325" type="video/x-ms-asf"></EMBED>';
+(function setSrc(obj){ 
+  var play = $(".play");
+  var playLen = $(".play").length;
+  var videoPar = $(".video_pop")
+  var videoParHTML = null;
+  //$(videoParHTML).appendTo(videoPar);    
   
-  for(var i=0; i<tabva.length; i++){
-    tabva[i].onclick=function(){
-        var href1 = this.getAttribute("href");
-          var href2 = '<EMBED src="'+href1+'" autostart="true" width="545" height="325" type="video/x-ms-asf"></EMBED>';
-          tabcv.getElementsByTagName("embed")[0].style.display="none";
-          tabcv.innerHTML="";
-          tabcv.innerHTML=href2;
-          for(i=0; i<tabva.length; i++){
-            tabva[i].className='';
-          }
-          this.className = "act";
-          return false;
-      }
+  for (var i=0;i<playLen;i++) {
+    //var _index = i;
+    //console.log(_index)
+    
+    play.eq(i).click(function(){
+      var iTargetSrc = $(this).attr("dateSrc");   //获取点击播放视频的url
+      var iTargetName = $(this).attr("videoname");   //获取点击播放视频的名称
+      videoParHTML = '<div class="close" onclick="Tips.hideVideo();"><img src="images/video_x.png" /></div>'
+              +'<h2 class="video_tit">'+iTargetName+'</h2>'
+              +'<embed allowscriptaccess="never" allownetworking="internal" invokeurls="false" src='
+              +iTargetSrc
+              +' pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" quality="high" autostart="0" wmode="transparent" align="middle"></embed>';
+      
+      //console.log(iTargetSrc)
+      //console.log(iTargetName)
+      //alert(iTargetSrc)
+      //alert(iTargetName)
+  
+      
+      $(".video_pop embed").hide();         //隐藏embed 标签
+      $(".video_pop").html("");           //清空
+    
+      $(videoParHTML).appendTo(videoPar); 
+      showHide('#fade_div','.video_pop');
+      
+      
+      var parentWidth = $("embed").parent().width();
+      var parentHeight = $("embed").parent().height();
+      
+    
+      $("embed").css({
+        "width":parentWidth,
+        "height":parentHeight
+      })
+
+    });
   }
-}
+})();
+
 ```
 
 
@@ -83,3 +112,47 @@ function setEmbed(){
     )
 })();
 ```
+
+
+4、移动端响应式脚本，动态改变尺寸
+---------------------------------
+
+>** 转换比例 1rem = 100px **
+>- 使用移动端和pc设备
+````
+!(function(win, doc){
+    function setFontSize() {
+        // 获取window 宽度
+        // zepto实现 $(window).width()就是这么干的
+        var winWidth =  window.innerWidth;
+        // doc.documentElement.style.fontSize = (winWidth / 640) * 100 + 'px' ;
+        
+        // 2016-01-13 订正
+        // 640宽度以上进行限制 需要css进行配合
+        var size = (winWidth / 640) * 100;
+        doc.documentElement.style.fontSize = (size < 100 ? size : 100) + 'px' ;
+    }
+ 
+    var evt = 'onorientationchange' in win ? 'orientationchange' : 'resize';
+    
+    var timer = null;
+ 
+    win.addEventListener(evt, function () {
+        clearTimeout(timer);
+ 
+        timer = setTimeout(setFontSize, 300);
+    }, false);
+    
+    win.addEventListener("pageshow", function(e) {
+        if (e.persisted) {
+            clearTimeout(timer);
+ 
+            timer = setTimeout(setFontSize, 300);
+        }
+    }, false);
+ 
+    // 初始化
+    setFontSize();
+ 
+}(window, document));
+````
