@@ -156,3 +156,45 @@ for(var i=0; i<tabva.length; i++){
  
 }(window, document));
 ````
+
+5、 判断是IOS设备or安卓设备
+------------------------------
+> 
+
+>- 方法一：
+```
+var u = navigator.userAgent;
+var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;  **//android终端**
+var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);              **//ios终端
+if(isAndroid) {
+  alert('这是Android');
+}
+if(isiOS) {
+  alert('这是IOS');
+}
+```
+>- 方法二：
+```
+if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+  //alert(navigator.userAgent);
+  alert('这是IOS');
+} else if(/(Android)/i.test(navigator.userAgent)) {
+  //alert(navigator.userAgent);
+  alert('这是Android');
+} else {
+  alert('这是PC');
+};
+```
+>- 微信浏览器or非微信浏览器。
+
+```
+function is_weixn() {
+  var ua = navigator.userAgent.toLowerCase();
+  if(ua.match(/MicroMessenger/i) == 'micromessenger') {
+    alert('在微信里打开');
+  } else {
+    alert('不在微信里打开');
+  }
+}
+is_weixn();
+```
