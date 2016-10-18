@@ -1,4 +1,4 @@
-#### <i class="icon-pencil"></i> javascript notepad Rename a document
+javascript notepad
 ================
 
 #常用函数，整理，
